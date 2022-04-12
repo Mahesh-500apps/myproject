@@ -3,7 +3,7 @@
 <div>
 
 <h1>{{ message }} </h1>
-
+navya
 <button @click="f1()">
 
 click
@@ -30,7 +30,7 @@ message: 'Hello World!',
 
 a:[1,2,3]
 
-}
+};
 
 },
 
@@ -46,10 +46,10 @@ alert("hi")
 
 console.log(this.a[1])
 
-}
+},
 
-}
+},
 
-}
+};
 
 </script>
