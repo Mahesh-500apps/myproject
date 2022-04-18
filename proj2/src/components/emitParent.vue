@@ -7,7 +7,7 @@
  <script> 
  import emitChild from '../components/emitChild' 
  export default
- { name:"emiT", 
+ { name:"EmiT", 
  components:{
       emitChild, 
       }, 
