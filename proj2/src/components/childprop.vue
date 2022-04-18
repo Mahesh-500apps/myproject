@@ -16,10 +16,8 @@ export default {
         name : String, 
         number : {default:1138,  type:Number },
          mantra: String, 
-         Items:[ 
-             {age:20,firstname:"navya",lastname:"doddi"}, 
-             {age:24,firstname:"chaitrika",lastname:"lagadapati"} 
-             ]
+         Items:Array 
+
               },
                methods:{ 
                    fun(){
