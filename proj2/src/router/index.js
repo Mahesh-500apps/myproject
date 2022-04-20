@@ -22,10 +22,18 @@ import card1 from "@/components/bcard1"
 import parent1 from "@/components/parent1"
 import emit from "@/components/emitParent"
 import rest from "@/components/rest"
-import const1 from "@/components/const"
-import apis from "@/components/apis"
-import api from "@/components/api1"
-import ap from "@/components/ap1"
+//import apis from "@/components/apis"
+//import api from "@/components/api1"
+//import ap from "@/components/ap1"
+import btable from "../components/assignment-1/8thB"
+import fo from "../components/assignment-1/9thF"
+import search from "../components/assignment-1/search"
+
+import four from "../components/assignment-1/4th"
+import five from "../components/assignment-1/5th"
+import ten from "../components/assignment-1/10th"
+import six from "../components/assignment-1/6thParent"
+import child6 from "../components/assignment-1/child6"
 
 
 
@@ -114,15 +122,66 @@ const routes = [
     name: "est",
     component:rest
 },
+
+//{
+    //path:"/a",
+    //name:"a",
+    //component:apis
+//},
+//{
+    //path:"/aa",
+    //name:"aa",
+    //component:api
+//},
+
+//{
+   //path:"/aap",
+    //name:"aap",
+    //component:ap
+//},
 {
-    path: "/cnst",
-    name: "const",
-    component:const1
+    path:"/tab",
+    name:"tab",
+    component:btable
 },
 {
-    path: "/ap",
-    name: "ap",
-    component:ap
+    path:"/fo",
+    name:"fo",
+    component:fo
+},
+{
+    path:"/sea",
+    name:"search",
+    component:search
+},
+
+{
+    path:"/4",
+    name:"four",
+    component:four
+
+},
+{
+    path:"/5",
+    name :"five",
+    component:five
+},
+{
+    path:"/10",
+    name:"ten",
+    component:ten
+},
+
+{
+    path:"/6",
+    name:"six",
+    component:six
+
+} ,
+{
+    path:"/66",
+    name:"six",
+    component:child6
 }
 ]
 let router = new Router({ routes })

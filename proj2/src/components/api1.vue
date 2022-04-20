@@ -3,15 +3,15 @@
 </template>
 
 <script>
-import axios from 'axios'
 export default {
+  name:"MahI",
     data(){
         return{
 
         }
     },
   created() {
-    result=axios.get('http://universities.hipolabs.com/search?country')
+    result=axios.get('http://universities.hipolabs.com/search?country');
       console.log(result);
     }
   }
