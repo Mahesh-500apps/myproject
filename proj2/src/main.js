@@ -4,22 +4,29 @@ import App from './App.vue'
 
 import router from './router'
 
-import { BootstrapVue } from "bootstrap-vue";
-
 import 'bootstrap/dist/css/bootstrap.css'
 
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-Vue.use(BootstrapVue);
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+
+import axios from 'axios'
+
+Vue.prototype.$http = axios
+
+Vue.use(IconsPlugin)
+
+Vue.use(BootstrapVue)
 
 Vue.config.productionTip = false
 
 let vueRoute = new Vue({
 
-router,
+  router,
 
-render: h => h(App),
+  render: h => h(App),
 
 }).$mount('#app')
 
 export default vueRoute
+
