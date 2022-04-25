@@ -1,7 +1,7 @@
 <template>
 <div>
     <b-table :items="rows" :fields = "field"></b-table>
-    <li v-for="item in rows" :key="item.index">{{item.name}}:{{item.index}}</li>
+    <li v-for="item in rows" :key="item.index">{{item.name}}:{{item.index}}></li>
  
    
   </div>  

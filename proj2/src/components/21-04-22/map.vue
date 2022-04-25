@@ -26,18 +26,10 @@ export default{
                     job:item.job
                     
                 }
-                
-            
-            
-            });
+        });
             console.log(result);
             }
 }
 }
-                       
-            
-    
-       
-        
-        </script>
+</script>
 
