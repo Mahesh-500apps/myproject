@@ -16,11 +16,9 @@ export default {
 name:"ApiS",
 
 data() {
-
 return{
 
 }
-
 },
 
 async mounted(){

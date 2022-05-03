@@ -45,6 +45,6 @@ console.log(array([1, 2, 4, 0]));
 
 };
 
-</script> 3rd
+</script>
 
 

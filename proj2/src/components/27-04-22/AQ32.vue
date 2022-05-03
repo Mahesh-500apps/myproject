@@ -2,7 +2,6 @@
   <div>
     <b-form @submit.prevent="country">
       <label for="d1">Country</label>
-
       <b-form-input
         id="d1"
         v-model="value"
@@ -10,13 +9,14 @@
         required
       ></b-form-input
       ><br />
-
       <b-button type="submit" variant="primary">Submit</b-button>
-    </b-form>
-            <b-table striped hover :items="items" :fields="fields">
 
-            </b-table>
-            </div>
+    </b-form>
+<b-table striped hover :items="items" :fields="fields">
+<!-- web_pages:<a :href="value.web_pages" target="_blank" > -->
+<!-- {{ data1.web_pages[0] }}</a> -->
+</b-table>
+</div>
 </template>
 
 
@@ -49,11 +49,8 @@ export default {
       this.items = responseText.map((row) => {
         return {
             domains: row.domains,
-
-          website_url: row.web_pages[0],
+         website_url: row.web_pages[0],
           location: row.country,
-
-    
         };
       });
     },  

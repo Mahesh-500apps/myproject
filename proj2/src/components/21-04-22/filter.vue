@@ -1,6 +1,5 @@
 <template>
 <div>
-<!-- <p>{{items}}</p> -->
     <button type="submit" @click="fun">Click</button>
 </div>
 </template>

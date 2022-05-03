@@ -1,13 +1,8 @@
 import Vue from "vue"
-
 import Router from "vue-router"
-
 import HelloWorld from "@/components/HelloWorld"
-
 import ex from "@/components/example"
-
 import table from "@/components/bTable"
-
 import bro from "@/components/first"
 import child from "@/components/childprop"
 import parent from "@/components/parentprop"
@@ -53,15 +48,50 @@ import AQ10 from "@/components/Assignment 25-04-22/AQ10"
 import AQ8 from "@/components/Assignment 25-04-22/AQ8"
 import AQ7 from "@/components/Assignment 25-04-22/AQ7"
 import AQ9 from "@/components/Assignment 25-04-22/AQ9"
-
+import AQ21 from "@/components/assignment 26-04-22/AQ21"
+import AQ22 from "@/components/assignment 26-04-22/AQ22"
+import AQ23 from "@/components/assignment 26-04-22/AQ23"
+import AQ24 from "@/components/assignment 26-04-22/AQ24"
+import AQ25 from "@/components/assignment 26-04-22/AQ25"
+import AQ26 from "@/components/assignment 26-04-22/AQ26"
+import AQ31 from "@/components/27-04-22/AQ31"
+import AQ32 from "@/components/27-04-22/AQ32"
+import AQ33 from "@/components/27-04-22/AQ33"
+import AQ34 from "@/components/27-04-22/AQ34"
+import AQ35 from "@/components/27-04-22/AQ35"
+import spin from "@/components/Assignment 28-04-22/spin"
+import page from "@/components/Assignment 28-04-22/page"
+import AQ41 from "@/components/Assignment 28-04-22/AQ41"
+import AQ42 from "@/components/Assignment 28-04-22/AQ42"
+import AQ45 from "@/components/assignment-1/AQ45"
+import alert from "@/components/29-04-22/alert"
+//import scrap from "@/components/29-04-22/scrap"
+import abc from "@/components/29-04-22/abc"
+//import eighth from "@/components/asssignment7/eighth"
+import third from "@/components/asssignment7/third"
+import fifth from "@/components/asssignment7/fifth"
+import scrap from "@/components/3-may-2022/web"
+import crud from "@/components/3-may-2022/crud"
+import filterr from "@/components/3-may-2022/filterrr"
+import promis from "@/components/3-may-2022/promis"
 
 Vue.use(Router)
 
 const routes = [
-
+    { path: "/third", name: "third", component: third},
+    {path:"/fifth",name :"fifth",component:fifth},
+    {path:"/scrap",name:"scrap",component:scrap},
+    {path:"/crud",name:"crud",component:crud},
+    {path:"/filterr",name:"filterr",component:filterr},
+    {path:"/promis",name:"promis",component:promis},
 { path: "/hello", name: "hello", component: HelloWorld},
-
+{path :"/alert", name:"alert",component:alert},
 { path: "/ex", name: "ex", component: ex},
+{ path:"/aq42",name:"aq42",component:AQ42},
+{path:"/aq45",name:"aq45",component:AQ45},
+// {path:"/scrap",name:"scrap",component:scrap},
+{path:"/abc",name:"abc",component:abc},
+//{path:"/eighth",name:"eighth",component:eighth},
 
 {
      path: "/btable",
@@ -293,6 +323,77 @@ const routes = [
     path:"/aq9",
     name:"aq9",
     component:AQ9
+},
+{
+    path:"/aq21",
+    name:"aq21",
+    component:AQ21
+},
+{
+    path:"/aq22",
+    name:"aq22",
+    component:AQ22
+},
+{
+    path:"/aq24",
+    name:"aq24",
+    component:AQ24
+},
+{
+    path:"/aq23",
+    name:"aq23",
+    component:AQ23
+},
+{
+    path:"/aq25",
+    name:"aq25",
+    component:AQ25
+},
+{
+    path:"/aq26",
+    name:"aq26",
+    component:AQ26
+},
+{
+    path:"/aq31",
+    name:"aq31",
+    component:AQ31
+
+},
+{
+    path:"/aq32",
+    name:"aq32",
+    component:AQ32
+},
+{
+    path:"/aq33",
+    name:"aq33",
+    component:AQ33
+},
+{
+    path:"/aq34",
+    name:"aq34",
+    component:AQ34
+},
+{
+    path:"/aq35",
+    name:"aq35",
+    component:AQ35
+},
+{
+    path:"/spin",
+    name:"spin",
+    component:spin
+},
+{
+    path:"/page",
+    name:"page",
+    component:page
+},
+{
+    path:"/aq41",
+    name:"aq41",
+    component:AQ41
 }
 
 

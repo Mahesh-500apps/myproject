@@ -14,6 +14,84 @@
 <!-- {{ data1.web_pages[0] }}</a> -->
 </b-table>
       </b-container>
+
+<b-container mt=5>
+
+<div class="row mt=3">
+
+<div class="col-md-3">
+
+<div class="p-2 alert alert-secondary">
+
+<h3>Country List</h3>
+
+<draggable class="list-group kanban-column" group="tasks" >
+
+<div class="list-group-item" v-for="value in items" :key="value.domains">
+
+<b-card id="sample2" v-for="value in items" :key="value.domains" class="mb-2">
+
+<b-card-text>university_name: {{ value.university_name }} </b-card-text>
+
+<p>domains: {{ value.domains }}</p>
+
+<a :href="value.website_url" _target="blank">{{value.website_url}}</a>
+
+<!-- <p @click="redirect(value.website_url)">
+
+website_url: {{ value.website_url }}</p> -->
+
+<p>state_province: {{ value.state_province }}</p>
+
+</b-card>
+
+</div>
+
+</draggable>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="p-2 alert alert-success">
+
+<h3>Country List2</h3>
+
+<draggable class="list-group kanban-column" :list="countries" id="sample" group="tasks" >
+
+<div class="list-group-item" v-for="value in items" :key="value.domain">
+
+</div>
+
+</draggable>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="p-2 alert alert-primary">
+
+<h3>Country List3</h3>
+
+<draggable class="list-group kanban-column" :list="countries" id="sample" group="tasks" >
+
+<div class="list-group-item" v-for="value in items" :key="value.domain">
+
+</div>
+
+</draggable>
+
+</div>
+
+</div>
+
+</div>
+
+</b-container>
  </div>
 </template>
 

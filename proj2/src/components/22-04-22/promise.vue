@@ -3,8 +3,6 @@
         </div>
 </template>
 <script>
-
-
 export default{
     name:"ProM",
   data() {
@@ -14,8 +12,7 @@ export default{
         
     },
     created(){
-        
-  fetch("https://www.w3schools.com/")
+        fetch("https://www.w3schools.com/")
           .then(res=>res.json())
           .then(()=>console.log("response"))
           .catch(()=>console.log("error"))
