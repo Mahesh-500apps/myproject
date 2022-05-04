@@ -7,16 +7,10 @@
 </div>
 
 </template>
-
-
 <script>
-
 export default {
-
 name: "AbhI",
-
 data() {
-
 return {
 
 myColor: ["Red", "Green", "White", "Black"],
@@ -24,9 +18,7 @@ myColor: ["Red", "Green", "White", "Black"],
 res:" "
 
 };
-
 },
-
 methods: {
 
 fun() {

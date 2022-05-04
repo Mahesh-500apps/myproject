@@ -8,9 +8,7 @@ export default{
     name:"MahI",
     data(){
         return{
-            
-
-        }
+             }
     },
 methods:{
  Ordinal(n)
