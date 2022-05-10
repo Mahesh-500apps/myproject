@@ -8,12 +8,12 @@
 <script>
 
 export default {
-    name:"MahI",
+    name:"LoweR",
 
     data() {
         return{
-               lower : "",  
-               upper:""
+               lower : " ",  
+               upper:" "
         }
             },  
  
