@@ -1,9 +1,13 @@
 <template>
 <div>
-   <p>string1: {{str1}}</p>
-    <p>string2 :{{str2}}</p>
-    <button @click="fun">click</button>
-    <p>{{result}}</p>
+    <form @click="fun">
+        string1:<input id="d1" type="string" placeholder="enter a string"><br/>
+        <br/>
+        string2:<input id="d2" type="string" placeHolder="enter a string"><br/>
+        <br/>
+    <button>click</button>
+    </form>
+    <h1>{{result}}</h1>
     <p></p>
     </div>
 </template>
@@ -12,15 +16,16 @@ export default{
     name:"MaHi",
     data() {
         return{
-             str1:"Life",
-             str2:"File",
+        
             result:" "
         }
     },
     methods:{
         fun(){
-            var string1=this.str1.toLowerCase();
-            var string2=this.str2.toLowerCase()
+            var str1=document.getElementById("d1").value;
+            var str2=document.getElementById("d2").value;
+            var string1=str1.toLowerCase();
+            var string2=str2.toLowerCase();
        
         this.result=(string1.length===string2.length && string1.split("").sort().join() == string2.split("").sort().join()); 
 
