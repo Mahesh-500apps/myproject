@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <button onclick="unique()">
+        Click 
+    </button>
+   <p id="output"></p>
+   <p id="input"></p>
+    <script type="text/javascript">
+         function  unique(){
+           let Input=
+[ { name: 'Mantra', id: 10 },
+ { name: '500apps', id: 10 },
+ { name: 'Mantra', id: 20 },
+ { name: 'Mantra', id: 10 } ]
+ //document.getElementById("input").innerHTML=Input
+            console.log(Input)
+         
+let Output = Input.filter((currentvalue, index, arr) => 
+                index === arr.findIndex((t) => ( t.id === currentvalue.id && t.name === currentvalue.name )) ) 
+                console.log(Output)
+    }
+    
+    </script>
+</body>
+  
+</html>
