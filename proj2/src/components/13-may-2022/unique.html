@@ -19,6 +19,7 @@
 let Output = Input.filter((currentvalue, index, arr) => 
                 index === arr.findIndex((t) => ( t.id === currentvalue.id && t.name === currentvalue.name )) ) 
                 console.log(Output)
+                document.getElementById("d1").innerHTML=Output;
     }
     
     </script>

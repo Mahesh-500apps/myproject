@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <button onclick="unique()">
+        Click here
+    </button>
+      <script type="text/javascript">
+      function unique() {
+let Input=
+[ { name: 'Mantra', id: 10 },
+ { name: '500apps', id: 10 },
+ { name: 'Mantra', id: 20 },
+ { name: 'Mantra', id: 10 } ]
+            console.log(Input);
+            let newArray = [];
+            let object = {};
+            for (let i in Input) {   
+                t= Input[i]['id','name'];
+                object[t] = Input[i];
+            }              
+            for (i in object) {
+                newArray.push(object[i]);
+            }       
+            console.log(newArray);
+        }
+    </script>
+</body>
+  
+</html>
