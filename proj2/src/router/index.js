@@ -74,14 +74,102 @@ import scrap from "@/components/3-may-2022/web"
 import crud from "@/components/3-may-2022/crud"
 import filterr from "@/components/3-may-2022/filterrr"
 import promis from "@/components/3-may-2022/promis"
+import crudop from "@/components/04-may-2022/crudop"
+import methods from "@/components/05-may-2022/methos"
+import computed from "@/components/05-may-2022/computed"
+import scroll from "@/components/05-may-2022/scrollspy"
+import scrcs from "@/components/05-may-2022/scrcs"
+import srsrs from "@/components/05-may-2022/2501"
+import comprop from "@/components/6-MAY-2022/comprop1"
+import covsme from "@/components/6-MAY-2022/covsme"
+import tabs from "@/components/6-MAY-2022/tabs"
+import kmm from "@/components/6-MAY-2022/kmm"
+import tafob from "@/components/6-MAY-2022/tafob"
+import disn from "@/components/6-MAY-2022/disn"
+import color from "@/components/6-MAY-2022/color"
+import vif from "@/components/6-MAY-2022/vif"
+import colla from "@/components/6-MAY-2022/collaform"
+import popro from "@/components/6-MAY-2022/poprop"
+import bus1 from "@/components/7th -may-2020/bus1"
+import bus2 from "@/components/7th -may-2020/bus2"
+import proo from "@/components/9-may-2022/proo1"
+import pagetab from "@/components/9-may-2022/pagetab"
+import tatab from "@/components/9-may-2022/tabtable"
+import actab from "@/components/9-may-2022/accotable"
+import coll from "@/components/9-may-2022/coll"
+import ppt  from "@/components/9-may-2022/pptab"
+import ccc from "@/components/9-may-2022/ccc"
+import pizza from "@/components/9-may-2022/pizza"
+import ass1 from "@/components/10-may-2022/ass1"
+import lower from "@/components/10-may-2022/lower"
+import table2 from "@/components/10-may-2022/table10"
+import compare from "@/components/11-may-2022/compare"
+import alert5 from "@/components/11-may-2022/alert"
+import lc from "@/components/11-may-2022/lifecycle"
+import twow from "@/components/11-may-2022/twoway"
+import listredn from "@/components/11-may-2022/listredn"
+import parent21 from "@/components/11-may-2022/parent21"
+import refs from "@/components/12-may-2022/refs"
+import avatar from "@/components/12-may-2022/avatar"
+import emit22 from "@/components/12-may-2022/emit22"
+import emit12 from "@/components/12-may-2022/emit12"
+import table11 from "@/components/10-may-2022/table11"
+import emit13 from "@/components/13-may-2022/emi13"
+import props12 from "@/components/16-may-2022/props12"
+import unique from "@/components/13-may-2022/unique"
+import form123 from "@/components/16-may-2022/form123"
 
+
+
+//import phone from "@/components/9-may-2022/phone"
 Vue.use(Router)
 
 const routes = [
+
+    {path:"/pop",name:"pop",component:popro},   
+     {path:"/twow",name:"twow ",component:twow},
+     {path:"listredn",name:"lire",component:listredn},
+     {path:"/999",name:"324",component:parent21},
+     {path:"/998",name:"325",component:refs},
+     {path:"/997",name:"326",component:emit22},
+     {path:"/996",name:"327",component:avatar},
+     {path:"/995",name:"328",component:emit13},
+     {path:"/954",name:"327",component:unique},
+     {path:"/props12",name:"props12",component:props12},
+     {path:"/form123",name:"form123",component:form123},
+
+    {path:"/alert3",name:"alert3",component:alert5},
+    {path:"/compare",name:"compare",component:compare},
+    {path:"/ass1",name:"ass1",component:ass1},
+    {path:"/paget",name:"paget",component:pagetab},
+    {path:"/tatab",name:"tatab",component:tatab},
+    {path:"/actab",name:"actab",component:actab},
+    {path:"/lower",name:"lower",component:lower},
+    {path:"/coll",name:"coll",component:coll},
+    {path:"/ppt",name:"ppt",component:ppt},
+    {path:"/ccc",name:"ccc",component:ccc},
+    {path:"/pizza",name:"pizza",component:pizza},
+{path:"/table2",name:"table2",component:table2},
+{path:"/lc",name:"lc",component:lc},
+{path:"/888",name:"99",component:emit12},
+{path:"/10",name:"10",component:table11},
+
+    {path:"/proo",name:"proo",component:proo},
+    {path:"/bus1",name:"bus1",component:bus1},
+    {path:"/bus2",name:"bus2",component:bus2},
+    {path:"/comprop",name:"comprop",component:comprop},
+    {path:"/come",name:"come",component:methods},
+    {path:"/321",name:"321",component:scroll},
+    {path:"/123",name:"123",component:scrcs},
+    {path:"/tab",name:"tab",component:tabs},
+    {path:"/2501",name:"2501",component:srsrs},
+    {path:"/covsme",name:"covsme",component:covsme},
+    {path:"/cameo",name:"cameo",component:computed},
     { path: "/third", name: "third", component: third},
     {path:"/fifth",name :"fifth",component:fifth},
     {path:"/scrap",name:"scrap",component:scrap},
     {path:"/crud",name:"crud",component:crud},
+    {path:"/crudop",name:"crudop",component:crudop},
     {path:"/filterr",name:"filterr",component:filterr},
     {path:"/promis",name:"promis",component:promis},
 { path: "/hello", name: "hello", component: HelloWorld},
@@ -92,6 +180,13 @@ const routes = [
 // {path:"/scrap",name:"scrap",component:scrap},
 {path:"/abc",name:"abc",component:abc},
 //{path:"/eighth",name:"eighth",component:eighth},
+{path:"/tafob",name:"tafob",component:tafob},
+{path:"/disn",name:"disn",component:disn},
+{path:"/vif",name:"vif",component:vif},
+{path:"/colla",name:"colla",component:colla},
+{path:"/kmm",name:"kmm",component:kmm},
+{path:"/color",name:"color",component:color},
+
 
 {
      path: "/btable",
@@ -187,8 +282,8 @@ const routes = [
     //component:ap
 //},
 {
-    path:"/tab",
-    name:"tab",
+    path:"/tab153",
+    name:"tab123",
     component:btable
 },
 {

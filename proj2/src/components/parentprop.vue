@@ -33,7 +33,7 @@ data(){
             click(){ 
                      this.$refs.ref.fun(); 
                      this.$refs.refo.Items; 
-                     console.log("i did it") 
+                     console.lo("i did it") 
                      }
                       } } 
             </script> 

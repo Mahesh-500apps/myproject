@@ -14,7 +14,7 @@ export default {
     props : { 
         message: String, 
         name : String, 
-        number : {default:1138,  type:Number },
+        number : Number ,
          mantra: String, 
          Items:Array 
 

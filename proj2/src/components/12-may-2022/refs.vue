@@ -18,9 +18,8 @@ export default{
     },
     methods:{
         fun(){
-            console.log(this.$refs.input.value)
-
-            this.output=this.$refs.input.value;
+this.output=this.$refs.input.value;
+console.log(this.output)
         }
     }
 }

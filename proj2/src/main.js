@@ -12,11 +12,21 @@ import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 
 import axios from 'axios'
 
+import { VBScrollspyPlugin } from 'bootstrap-vue'
+
+import { BDropdown } from 'bootstrap-vue'
+
+Vue.component('b-dropdown', BDropdown)
+
+
 Vue.prototype.$http = axios
+
+Vue.use(VBScrollspyPlugin)
 
 Vue.use(IconsPlugin)
 
 Vue.use(BootstrapVue)
+
 
 Vue.config.productionTip = false
 

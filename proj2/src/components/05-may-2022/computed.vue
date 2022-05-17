@@ -28,11 +28,11 @@ export default {
         },
 computed:{
     addToA(){
-            console.log('addToA')
+        alert("main hoon")
             return this.a+this.age;
         },
         addToB(){
-            console.log('addToB')
+            alert("main hoon")
             return this.b+this.age;
     
 

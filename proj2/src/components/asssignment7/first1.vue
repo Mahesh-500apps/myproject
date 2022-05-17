@@ -56,5 +56,4 @@ return this.radius * 2;
 },
 
 };
-
 </script> 
