@@ -17,8 +17,6 @@ export default {
         },
         methods:{
             async fun(){
-        
-        
         const response=await axios("http://universities.hipolabs.com/search?country=") 
         const  responseText= response.data;
                 this.items=responseText;

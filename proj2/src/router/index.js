@@ -118,13 +118,38 @@ import emit13 from "@/components/13-may-2022/emi13"
 import props12 from "@/components/16-may-2022/props12"
 import unique from "@/components/13-may-2022/unique"
 import form123 from "@/components/16-may-2022/form123"
+import filter18 from "@/components/18-may-2022/filter18"
+import es6 from "@/components/18-may-2022/es6"
 
+
+
+
+
+
+/*  notes App */
+import signup from "@/components/notesApp/signup"
+import note from "@/components/notesApp/notepad"
+import deleted from "@/components/notesApp/deleteConfirmation"
+import showAll from "@/components/notesApp/showAll"
+import createPage from "@/components/notesApp/createPage"
+import login from "@/components/notesApp/login"
 
 
 //import phone from "@/components/9-may-2022/phone"
 Vue.use(Router)
 
 const routes = [
+    /* notes app */
+    {path:"/signup",name:"signup",component:signup}, 
+    {path:"/note",name:"note",component:note},   
+    {path:"/deleted",name:"del",component:deleted}, 
+    {path:"/showAll",name:"showAll",component:showAll}, 
+    {path:"/login",name:"login",component:login}, 
+
+    {path:"/createPage",name:"createPage",component:createPage}, 
+
+
+    /* end notes app */
 
     {path:"/pop",name:"pop",component:popro},   
      {path:"/twow",name:"twow ",component:twow},
@@ -137,6 +162,8 @@ const routes = [
      {path:"/954",name:"327",component:unique},
      {path:"/props12",name:"props12",component:props12},
      {path:"/form123",name:"form123",component:form123},
+     {path:"/filter18",name:"filter18",component:filter18},
+     {path:"/es6",name:"es6",component:es6},
 
     {path:"/alert3",name:"alert3",component:alert5},
     {path:"/compare",name:"compare",component:compare},

@@ -6,9 +6,11 @@
         <b-col />
         <b-col>
           <b-form>
-            <button class="button">
-              <router-link to="/note">notepad</router-link>
-            </button>
+            <router-link to="/note">
+            <button class="button" variant="success"> +
+    </button>
+              </router-link>
+            
           </b-form> </b-col
         ><b-col
       /></b-row>
@@ -27,5 +29,7 @@ export default {
   position: absolute;
   top: 500px;
   right: 0;
+  border-radius: 50%;
+  border-color: rgb(17, 5, 245);
 }
 </style>
