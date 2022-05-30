@@ -59,8 +59,8 @@ export default {
       selected: null,
       options: [
         { value: "Select Gender", text: "select Gender" },
-        { value: "Male", text: "male" },
-        { value: "Female", text: "female" },
+        { value: "M", text: "male" },
+        { value: "F", text: "female" },
       ],
       values: [
         { value: "select a class" },

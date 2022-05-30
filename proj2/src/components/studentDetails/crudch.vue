@@ -15,17 +15,15 @@
     <div>
       <b-button @click="Create" class="addStudent"> Add Student</b-button>
     </div>
-    <br /><br /><br /><br />
+    <br /><br /><br /><br /><br/>
 
-    <b-table striped hover :items="tableData" :fields="columns" class="table">
+    <b-table striped hover class="table" :items="tableData" :fields="columns">
       <template #cell(action)="data">
-        <b-button @click="Edit(data.item)" v-b-modal="'edit-modal'" variant="info">Update</b-button>
-        <b-button
-          @click="Delete(data.item)"
-          v-b-modal="'edit-modal'"
-          variant="danger"
-          >delete
-        </b-button>
+        <b-button @click="Edit(data.item)" variant="info">Edit</b-button>&nbsp;
+
+        <b-button v-b-modal.modal-1 @click="hello(data.item)" variant="danger"
+          >Delete</b-button
+        >
       </template>
     </b-table>
     <b-modal v-model="modalShow" :title="Title" hide-footer>
@@ -35,6 +33,14 @@
         <b-button type="submit" class="submit"> </b-button>
       </b-form>
     </b-modal>
+    <b-modal
+          id="modal-1"
+          ref="deleteConfirmation"
+          title="Delete Details"
+          @ok="Delete"
+        >
+          Do you want to delete data?
+        </b-modal>
   </div>
 </template>
 <script>
@@ -48,17 +54,12 @@ export default {
       modalShow: false,
       editedIndex: -1,
       tableData: [],
+      delete_data: null
     };
   },
   computed: {
     Title() {
-      return this.editedIndex === -1 ? "Add Student" : "Edit Student" ;
-    },
-    itemsWithSno() {
-      return this.columns.map((item) => ({
-        ...item,
-        sno: this.editedIndex + 1,
-      }));
+      return this.editedIndex === -1 ? "Add Student" : "Edit Student";
     },
   },
   methods: {
@@ -72,15 +73,11 @@ export default {
       this.editedIndex = this.tableData.indexOf(item);
       this.editedItem = Object.assign({}, item);
     },
-    Delete(item) {
-      this.modalshow=true;
-      const index = this.tableData.indexOf(item);
-this.$emit("OK", this.delete_flag);
-
-this.$bvModal.hide("delete-confirmation-modal-" + this.id);
-
-        this.tableData.splice(index, 1);
-      axios.delete(this.endpoint + "/" + item.id);
+    Delete() {
+      const index = this.tableData.indexOf(this.delete_data);
+      // this.$emit("OK", this.delete_flag);
+      // this.$bvModal.hide("delete-confirmation-modal-" + this.id);
+      this.tableData.splice(index, 1);
     },
     close() {
       this.modalShow = false;
@@ -100,6 +97,11 @@ this.$bvModal.hide("delete-confirmation-modal-" + this.id);
       this.close();
     },
   },
+  hello(data) {
+    this.delete_data = data;
+
+    this.$refs.deleteConfirmation.show();
+  },
   created() {
     axios(this.endpoint).then(
       (response) => (this.tableData = response.data.data)
@@ -108,28 +110,34 @@ this.$bvModal.hide("delete-confirmation-modal-" + this.id);
 };
 </script>
 <style scoped>
-.submit{
-position: relative;
-bottom: 500px;
-width:30px;
-height:20px;
-right:-400px;
-}
-
 .loginName {
   position: absolute;
-  top: 0; /* */
+  top: 0;
   right: 0;
 }
 .addStudent {
   position: absolute;
   left: 0;
 }
-.css-serial {
- counter-reset: serial-number; /* Set the serial number counter to 0 */
+.submit {
+  position: relative;
+
+  bottom: 500px;
+
+  width: 40px;
+
+  height: 35px;
+
+  right: -400px;
 }
-.css-serial tr td:first-child:before {
- counter-increment: serial-number; /* Increment the serial number counter */
- content: counter(serial-number); /* Display the counter */
+
+.table {
+  counter-reset: Student_details; /* Set the serial number counter to 0 */
+}
+
+. tr td:first-child:before {
+  counter-increment: Student_details; /* Increment the serial number counter */
+
+  content: counter(Student_details); /* Display the counter */
 }
 </style>
