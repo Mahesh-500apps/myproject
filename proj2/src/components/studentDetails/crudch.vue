@@ -32,7 +32,7 @@
       <b-form @submit.prevent="save">
         <slot :formdata="editedItem" name="input-fields"> </slot>
 
-        <b-button type="submit" class="submit"> Submit</b-button>
+        <b-button type="submit" class="submit"> </b-button>
       </b-form>
     </b-modal>
   </div>
@@ -75,7 +75,10 @@ export default {
     Delete(item) {
       this.modalshow=true;
       const index = this.tableData.indexOf(item);
-      confirm("Are you sure you want to delete this item?") &&
+this.$emit("OK", this.delete_flag);
+
+this.$bvModal.hide("delete-confirmation-modal-" + this.id);
+
         this.tableData.splice(index, 1);
       axios.delete(this.endpoint + "/" + item.id);
     },
@@ -105,11 +108,14 @@ export default {
 };
 </script>
 <style scoped>
-.submit {
-  position: absolute;
-  right: 0;
-  top: 0;
+.submit{
+position: relative;
+bottom: 500px;
+width:30px;
+height:20px;
+right:-400px;
 }
+
 .loginName {
   position: absolute;
   top: 0; /* */
