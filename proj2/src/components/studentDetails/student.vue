@@ -1,5 +1,6 @@
 <template>
   <div>
+    
     <studentInfo
       :columns="[
         'sno',
@@ -13,6 +14,7 @@
       :form-fields="{}"
     >
       <template v-slot:input-fields="{ formdata }">
+        <b-form>
         Name:<b-form-input
           id="employee_name"
           v-model="formdata.name"
@@ -36,6 +38,7 @@
           v-model="formdata.date"
           class="mb-3"
           placeholder="Date of Joining"
+          :format="date"
         ></b-form-datepicker
         ><br />
 
@@ -44,6 +47,7 @@
           v-model="formdata.designation"
           :options="designation_options"
         ></b-form-select>
+        </b-form>
       </template>
     </studentInfo>
   </div>
@@ -52,11 +56,15 @@
 
 <script>
 import studentInfo from "./studentInfo.vue";
+//import Moment from "moment";
+
 export default {
   name: "AddEmployee",
   components: { studentInfo },
   data() {
     return {
+        perPage:3,
+        currentPage:1,     
       gender_options: [
         { value: "Female", text: "Female" },
         { value: "Male", text: "Male" },
@@ -70,7 +78,10 @@ export default {
       ],
     };
   },
-};
+  
+ 
+  }
+;
 </script>
 
 

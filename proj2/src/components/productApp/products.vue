@@ -1,5 +1,5 @@
 <template>
-  <div>  
+  <div>
     <center>
       <!-- <b-navbar>
           <b-navbar-brand><b-icon icon="building" /> 500Apps</b-navbar-brand>
@@ -10,7 +10,7 @@
           
           </b-navbar-nav>
         </b-navbar> -->
-      <b-navbar toggleable="lg" type="dark" variant="warning">
+      <!-- <b-navbar toggleable="lg" type="dark" variant="warning">
         <span class='bi bi-house' style='color: red'>></span>
         <b-navbar-brand href="#">Vue</b-navbar-brand>
         <b-nav align="left">
@@ -18,34 +18,40 @@
             login name:mahesh Atla
           </b-nav-item>
         </b-nav>
-      </b-navbar>
+      </b-navbar> -->
       <br /><br />
       <br /><br />
       <div>
-        <b-button variant="primary" @click="addEmployee" class="addStudent"
-          >Add Employee</b-button
+        <b-button variant="primary" @click="addProduct" class="addStudent"
+          >Add</b-button
         >
+        <b-button variant="primary" @click="importProduct">import</b-button>
+        <b-button variant="primary" @click="exportProduct">export</b-button>
       </div>
       <br /><br />
       <br /><br />
+      
+
       <b-table
         striped
         hover
+        :per-page="perPage"
+        :current-page="currentPage"
         :items="employeeTable"
         :fields="columns"
         id="table"
         class="css-serial"
       >
-         <template #cell(date)="data">
-          <p>{{convert_date(data.item.date)}}</p>
-        </template> 
+        <!-- <template #cell(date)="data">
+          <p>{{ convert_date(data.item.date) }}</p>
+        </template> -->
 
-        <template #cell(action)="data">
-          <b-button @click="editEmployee(data.item)" variant="primary" size="sm"
+        <template #cell(operations)="data">
+          <b-button @click="editProduct(data.item)" variant="primary" size="sm"
             ><b-icon icon="pencil-fill" /></b-button
           >&nbsp;
           <b-button
-            @click="deleteMessage(data.item)"
+            @click="deleteProduct(data.item)"
             variant="danger"
             size="sm"
           >
@@ -68,7 +74,7 @@
 
 <script>
 import axios from "axios";
-import Moment from "moment";
+
 export default {
   name: "Home_page",
   props: ["endpoint", "columns", "formFields"],
@@ -81,29 +87,27 @@ export default {
     };
   },
   computed: {
+       rows() {
+      return this.employeeTable.length;
+    },
     Title() {
       return this.editIndex === -1 ? "Add Employee" : "Edit Employee";
     },
   },
   methods: {
-    convert_date(item){
-      return Moment(item).format("DD-MMM-YYYY")
-    },
-    addEmployee() {
+    addProduct() {
       this.modalShow = true;
       this.editForm = Object.assign({}, this.formFields);
-      
-        this.editIndex = -1;
-      
+
+      this.editIndex = -1;
     },
-    editEmployee(item) {
+    editProduct(item) {
       this.modalShow = true;
       this.editIndex = this.employeeTable.indexOf(item);
       this.editForm = Object.assign({}, item);
-              console.log(this.response.data.data)
-
+      console.log(this.response.data.data);
     },
-    deleteMessage(item) {
+    deleteProduct(item) {
       this.item = "";
       this.$bvModal
         .msgBoxConfirm("Are you sure to delete employee.", {
@@ -128,7 +132,6 @@ export default {
     },
     created() {
       axios(this.endpoint).then(
-
         (response) => (this.employeeTable = response.data.data)
       );
     },
