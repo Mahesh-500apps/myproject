@@ -1,6 +1,5 @@
 <template>
-  <div>
-    
+  <div>    
     <Products
       :columns="[
         'ID',
@@ -20,8 +19,6 @@
           type="number"
         ></b-form-input
         ><br />
-
-
         product:<b-form-input
           id="product"
           v-model="formdata.product"
@@ -35,13 +32,9 @@
         ></b-form-input
         ><br /><br />
         Quality<b-form-input
-          v-model="formdata.quality"
-         
-        ></b-form-input>
-        
+          v-model="formdata.quality"         
+        ></b-form-input>        
         <br />
-
-
         type:<b-form-input
           v-model="formdata.type"
           type="text"
@@ -51,24 +44,16 @@
     </Products>
   </div>
 </template>
-
-
 <script>
 import Products from "./products.vue";
-
 export default {
-  name: "AddEmployee",
+  name: "addProduct",
   components: { Products },
-  data() {
-    
-  },
-  
- 
+  data() {   
+  }, 
   }
 ;
 </script>
-
-
 <style>
 </style>
 
