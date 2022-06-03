@@ -22,9 +22,7 @@
           ><br />
           SKU:<b-form-input v-model="formdata.SKU" required></b-form-input><br />
           Type:<b-form-input v-model="formdata.Type" type="text" required></b-form-input><br/>
-          Quality<b-form-input v-model="formdata.Quality" type ="number" maxlength=4 required></b-form-input>
-          
-          
+          Quality<b-form-input v-model="formdata.Quality" type ="number" :maxlength="4" :min="100" :max="1000 " required></b-form-input>          
         
       </template>
     </Products>
