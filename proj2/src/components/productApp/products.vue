@@ -1,6 +1,5 @@
 <template>
-  <div>
-    
+  <div>    
     <center>
       <b-button
         varient="danger"
@@ -138,10 +137,9 @@
       <b-modal v-model="modalShow" :title="Title" hide-footer>
         <b-form @submit.prevent="save">
           <slot :formdata="editForm" name="input-fields"> </slot>
-          <b-button variant="success" type="submit" class="submit"
+          <b-button variant="success" type="submit" class="save"
             ><b-icon-save
-          /></b-button>
-        
+          /></b-button>        
         </b-form>
       </b-modal>
     </center>
@@ -160,9 +158,7 @@ export default {
       result: [],
       fileinput: "",
       res: "",
-      file1: "",
-      file2: "",
-      //filterOn: [],
+      filterOn: [],
       editForm: this.formFields,
       modalShow: false,
       editIndex: -1,
@@ -174,7 +170,7 @@ export default {
       return this.employeeTable.length;
     },
     Title() {
-      return this.editIndex === -1 ? "Add Employee" : "Edit Employee";
+      return this.editIndex === -1 ? "Add Product" : "Edit Product";
     },
     sortOptions() {
       return this.fields
@@ -209,7 +205,7 @@ export default {
     deleteProduct(item) {
       this.item = "";
       this.$bvModal
-        .msgBoxConfirm("Are you sure to delete employee.", {
+        .msgBoxConfirm(" do you want to Delete this item.", {
           title: "Delete Employee",
           size: "lg",
           buttonSize: "sm",
@@ -302,12 +298,12 @@ export default {
   top: 0;
   right: 0;
 }
-.submit {
-  position: relative;
-  bottom: 490px;
+.save{
+  position: absolute;
+  bottom: 454px;
   width: 45px;
   height: 35px;
-  right: -380px;
+  right: 35px;
 }
 .addStudent {
   position: absolute;
