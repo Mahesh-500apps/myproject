@@ -92,7 +92,7 @@
         <b-button variant="warning" @click="importFile" class="import"
           >import <b-icon icon="arrow-up-circle"
         /></b-button>
-        <b-button variant="danger" @click="exportProduct" class="export"
+        <b-button variant="danger" @click="Export()" class="export"
           >export <b-icon icon="arrow-down-circle"
         /></b-button>
       </div>
@@ -147,6 +147,7 @@
 </template>
 <script>
 import axios from "axios";
+import exportFromJSON from 'export-from-json'
 export default {
   name: "Home_page",
   props: ["endpoint", "columns", "formFields"],
@@ -320,6 +321,28 @@ return this.productTable;
       reader.readAsText(file);
       console.log(reader);
       console.log(this.fileinput);
+    },
+    Export() {
+      const objectToCsv = function (data) {
+        const csvRows = [];
+        const headers = Object.keys(data[0]);
+        csvRows.push(headers.join(","));
+        for (const row of data) {
+          const values = headers.map((header) => {
+            const val = row[header];
+            return `"${val}"`;
+          });
+          csvRows.push(values.join(","));
+        }
+        return csvRows.join("\n");
+      };
+      const data = this.productTable;
+      const csvData = objectToCsv(data);
+      console.log(csvData);
+      //const data = this.tableData;
+      const fileName = "TableData";
+      const exportType = exportFromJSON.types.csv;
+      exportFromJSON({ data, fileName, exportType });
     },
   },
 };
