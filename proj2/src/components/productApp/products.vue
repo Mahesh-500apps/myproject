@@ -104,7 +104,7 @@
         hover
         :per-page="perPage"
         :current-page="currentPage"
-        :items="employeeTable"
+        :items="productTable"
         :fields="columns"
         id="table"
         :filter="filter"
@@ -122,7 +122,7 @@
       </b-table>
  
       <b-row
-        ><b-col>total {{ employeeTable.length }}</b-col
+        ><b-col>total {{ productTable.length }}</b-col
         ><b-col>{{ perPage }}/page</b-col
         ><b-col
           ><b-pagination
@@ -162,12 +162,12 @@ export default {
       editForm: this.formFields,
       modalShow: false,
       editIndex: -1,
-      employeeTable: [],
+      productTable: [],
     };
   },
   computed: {
     rows() {
-      return this.employeeTable.length;
+      return this.productTable.length;
     },
     Title() {
       return this.editIndex === -1 ? "Add Product" : "Edit Product";
@@ -198,7 +198,7 @@ export default {
     },
     editProduct(item) {
       this.modalShow = true;
-      this.editIndex = this.employeeTable.indexOf(item);
+      this.editIndex = this.productTable.indexOf(item);
       this.editForm = Object.assign({}, item);
       console.log(this.response.data.data);
     },
@@ -206,7 +206,7 @@ export default {
       this.item = "";
       this.$bvModal
         .msgBoxConfirm(" do you want to Delete this item.", {
-          title: "Delete Employee",
+          title: "Delete item",
           size: "lg",
           buttonSize: "sm",
           okVariant: "primary",
@@ -219,8 +219,8 @@ export default {
         })
         .then((value) => {
           if (value) {
-            const index = this.employeeTable.indexOf(item);
-            this.employeeTable.splice(index, 1);
+            const index = this.productTable.indexOf(item);
+            this.productTable.splice(index, 1);
             axios.delete(this.endpoint + "/" + value.id);
           } else return;
         });
@@ -241,7 +241,7 @@ export default {
     },
     created() {
       axios(this.endpoint).then(
-        (response) => (this.employeeTable = response.data.data)
+        (response) => (this.productTable = response.data.data)
       );
     },
     close() {
@@ -253,10 +253,10 @@ export default {
     },
     save() {
       if (this.editIndex > -1) {
-        Object.assign(this.employeeTable[this.editIndex], this.editForm);
+        Object.assign(this.productTable[this.editIndex], this.editForm);
         axios.put(this.endpoint + "/" + this.editForm.id, this.editForm);
       } else {
-        this.employeeTable.push(this.editForm);
+        this.productTable.push(this.editForm);
         axios.post(this.endpoint, this.editForm);
       }
       this.close();
@@ -274,7 +274,49 @@ export default {
       var reader = new FileReader();
       reader.onload = () => {
         this.fileinput = reader.result;
-      };
+
+        const convert = csv => {
+
+const myArray = csv.split("\n");
+
+const keys = myArray[0].split(',')
+
+return myArray.splice(1).map(myArray => {
+
+return myArray.split(',').reduce((acc, cur, i) => {
+
+const toAdd = {};
+
+toAdd[keys[i]] = cur;
+
+return { ...acc, ...toAdd};
+
+},{})
+
+})
+
+}
+
+const coverted = reader.result
+
+console.log(convert(coverted))
+
+this.productTable=convert(coverted);
+
+console.log( this.productTable)
+
+return this.productTable;
+
+
+};
+
+//reader.onerror = err => console.log(err);
+
+//reader.readAsText(this.file);
+
+
+
+  
       reader.readAsText(file);
       console.log(reader);
       console.log(this.fileinput);
