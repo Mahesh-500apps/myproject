@@ -1,6 +1,5 @@
 <template>
-  <div>
-   
+  <div>   
     <b-container>
       <b-row>
         <b-col></b-col>
@@ -89,7 +88,6 @@ export default {
       alert(JSON.stringify(this.form));
       this.$router.push("/createPage")
 //window.open("http://localhost:8081/#/createPage")
-
     },
     // onReset(event) {
     //   event.preventDefault();

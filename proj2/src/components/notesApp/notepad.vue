@@ -3,7 +3,7 @@
     <b-dropdown text="Home" class="button" variant="primary">
       <b-button v-b-toggle.collapse-1 variant="primary" @click="retrieve()">
         retrieve </b-button
-><br />
+      ><br />
 
       <b-button @click="clearAll()" variant="warning"> clearAll </b-button
       ><br />
@@ -14,10 +14,10 @@
       >
     </b-dropdown>
 
-    <b-form @submit="save" >
+    <b-form @submit="save">
       <b-button
         class="button1"
-        type="submit"       
+        type="submit"
         v-on:click="addText()"
         variant="success"
         >save</b-button
@@ -51,7 +51,6 @@ export default {
       result: "",
       data: [],
       names: [],
-  
     };
   },
   methods: {
@@ -102,6 +101,6 @@ export default {
 .button2 {
   position: absolute;
   top: 0;
-  right: 0.5;
+  right: 0;
 }
 </style>

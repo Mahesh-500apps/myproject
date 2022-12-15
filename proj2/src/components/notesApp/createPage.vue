@@ -9,18 +9,18 @@
             <router-link to="/note">
             <button class="button" variant="success"> +
     </button>
-              </router-link>
-            
+              </router-link>            
           </b-form> </b-col
         ><b-col
       /></b-row>
-    
   </div>
 </template>
 <script>
 export default {
   data() {
-    return {};
+    return {
+
+    }
   },
 };
 </script>

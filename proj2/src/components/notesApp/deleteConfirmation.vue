@@ -74,7 +74,7 @@
             </b-card>
           </b-col>
         </b-row>
-        hiiiiii 
+        
       </div>
     </template></b-modal
   >
