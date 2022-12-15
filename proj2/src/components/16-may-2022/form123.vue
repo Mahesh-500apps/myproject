@@ -116,6 +116,7 @@ export default {
       );
 
       this.items = await response.data;
+      console.log(this.items)
     },
     
     onSubmit(event) {
