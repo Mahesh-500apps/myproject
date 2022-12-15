@@ -29,6 +29,9 @@ export default {
       result: [],
     };
   },
+  mounted(){
+    this.fun();
+  },
   methods: {
     fun() {
       this.result = this.students.filter((row) => {

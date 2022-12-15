@@ -1,60 +1,43 @@
 <template>
+  <div>
+    <p>emit</p>
 
-<div>
+    <b-table striped hover :items="user" :fields="fields"></b-table>
 
-<p>emit</p>
-
-<b-table striped hover :items="user" :fields="fields" ></b-table>
-
-<emit14 @check="parent" />
-
-</div>
-
+    <emit14 @check="parent" />
+  </div>
 </template>
 
 <script>
+import emit14 from "./emit14.vue";
 
-import emit14 from "./emit14.vue"
+export default {
+  name: "EmitParent",
 
-export default{
+  components: {
+    emit14,
+  },
 
-name:"EmitParent",
+  data() {
+    return {
+      user: [
+        { name: "mahesh", subject: "db" },
 
-components:{
+        { name: "kiran", subject: "db" },
 
-emit14,
+        { name: "arjun", subject: "db" },
+      ],
 
-},
+      fields: ["name", "subject"],
+    };
+  },
 
-data(){
-
-return{
-
-user:[{name:'sukanya',subject:'db'},
-
-{name:'kiran',subject:'db'},
-
-{name:'arun',subject:'db'}],
-
-fields:['name','subject']
-
-}
-
-},
-
-methods:{
-
-parent(data){
-
-console.log("data",data)
-
-this.user[0].subject= data.subject;
-
-}
-
-}
-
-}
-
+  methods: {
+    parent(data) {
+      console.log("data", data);
+      this.user[0].subject = data.subject;
+    },
+  },
+};
 </script>
 
